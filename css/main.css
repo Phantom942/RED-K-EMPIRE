@@ -614,12 +614,28 @@ h1, h2, h3 { margin: 0; font-weight: 600; line-height: 1.2; }
 }
 
 .portfolio__title {
-  margin: 0 0 1.75rem;
+  margin: 0 0 0.75rem;
   font-family: var(--font-body);
   font-size: clamp(1.05rem, 2vw, 1.35rem);
   font-weight: 400;
   letter-spacing: 0.04em;
   color: #fff;
+  text-align: center;
+}
+
+.portfolio__intro {
+  max-width: 680px;
+  margin: 0 auto 1.75rem;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.portfolio__intro strong {
+  font-weight: 500;
+  color: var(--chrome);
 }
 
 .portfolio__grid {
@@ -857,6 +873,47 @@ h1, h2, h3 { margin: 0; font-weight: 600; line-height: 1.2; }
   margin: 0.85rem 0 0;
   color: var(--text-muted);
   font-weight: 300;
+}
+
+.faq__list {
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.faq__item {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.faq__item:first-child {
+  border-top: 1px solid var(--border-soft);
+}
+
+.faq__question {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--chrome-bright);
+}
+
+.faq__answer {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.faq__answer a {
+  color: var(--chrome);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.faq__answer a:hover {
+  color: var(--red);
 }
 
 .btn-red {

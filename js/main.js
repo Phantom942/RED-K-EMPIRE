@@ -158,7 +158,7 @@
       });
       if (success) success.hidden = false;
 
-      window.location.href = `mailto:contact@red-k-empire.fr?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:contact@redkempire.fr?subject=${subject}&body=${body}`;
     });
   }
 })();
