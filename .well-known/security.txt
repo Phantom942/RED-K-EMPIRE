@@ -1,0 +1,3 @@
+Contact: mailto:contact@red-k-empire.fr
+Preferred-Languages: fr, en
+Canonical: https://redkempire.fr/

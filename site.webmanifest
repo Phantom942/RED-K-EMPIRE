@@ -1,0 +1,24 @@
+{
+  "name": "RED-K EMPIRE",
+  "short_name": "RED-K",
+  "description": "Agence immobilière commerciale premium à Paris — actifs off-market.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0b",
+  "theme_color": "#c41e24",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/assets/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

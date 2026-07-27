@@ -11,11 +11,19 @@ Landing page B2B ultra-premium pour **RED-K EMPIRE**, agence immobilière commer
 ## Structure
 
 ```
-├── index.html          # Page d'accueil
-├── css/main.css        # Styles
-├── js/main.js          # Nav, carte, filtres, formulaire vault
+├── index.html              # Page d'accueil
+├── css/main.css            # Styles
+├── js/main.js              # Nav, carte, filtres, formulaire vault
+├── robots.txt              # Indexation + sitemap
+├── sitemap.xml             # Plan du site (GSC)
+├── site.webmanifest        # PWA / mobile
+├── llms.txt                # Description pour crawlers IA
+├── 404.html                # Page erreur
+├── mentions-legales.html   # Stub légal (à compléter)
+├── confidentialite.html    # Stub RGPD (à compléter)
+├── SEO-CHECKLIST.md        # Checklist Google Search Console
 └── assets/
-    └── logo-footer.png # Logo header + footer (transparent)
+    └── logo-footer.png     # Logo header + footer (transparent)
 ```
 
 ## Lancer en local

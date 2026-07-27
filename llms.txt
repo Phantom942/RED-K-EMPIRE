@@ -1,0 +1,18 @@
+# RED-K EMPIRE — redkempire.fr
+
+> Agence immobilière commerciale premium à Paris. Fonds de commerce, locaux et bureaux off-market.
+
+## Site
+- Accueil : https://redkempire.fr/
+- Contact : contact@red-k-empire.fr
+- WhatsApp : +33 6 48 74 56 68
+
+## Offre
+- Portefeuille d'actifs commerciaux exclusifs à Paris (boutiques, restauration, bureaux)
+- Accès off-market réservé aux investisseurs et cédants qualifiés
+- Mandats confidentiels, due diligence accélérée
+
+## Pages
+- / — Landing principale
+- /mentions-legales.html — Mentions légales
+- /confidentialite.html — Politique de confidentialité
