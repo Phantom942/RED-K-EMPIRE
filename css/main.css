@@ -133,12 +133,6 @@ h1, h2, h3 { margin: 0; font-weight: 600; line-height: 1.2; }
   padding-top: 0.15rem;
 }
 
-.brand__metal {
-  position: relative;
-  display: block;
-  line-height: 0;
-}
-
 .brand__logo {
   display: block;
   height: var(--logo-h);
@@ -148,34 +142,9 @@ h1, h2, h3 { margin: 0; font-weight: 600; line-height: 1.2; }
   object-position: left top;
   filter:
     drop-shadow(0 6px 18px rgba(0, 0, 0, 0.55))
-    drop-shadow(0 0 22px rgba(225, 6, 0, 0.12))
-    contrast(1.07)
-    saturate(1.06);
+    drop-shadow(0 0 22px rgba(225, 6, 0, 0.12));
   transition: opacity 0.2s var(--ease), transform 0.25s var(--ease);
 }
-
-/* Shimmer métallique — même principe que Kraken Metals */
-.brand__shine {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    110deg,
-    transparent 0%,
-    transparent 28%,
-    rgba(255, 255, 255, 0.06) 36%,
-    rgba(255, 255, 255, 0.42) 46%,
-    rgba(232, 232, 232, 0.38) 50%,
-    rgba(192, 192, 192, 0.28) 54%,
-    rgba(255, 255, 255, 0.14) 60%,
-    transparent 68%,
-    transparent 100%
-  );
-  background-size: 200% 100%;
-  mix-blend-mode: overlay;
-  animation: metallic-shimmer 5s ease-in-out infinite;
-  pointer-events: none;
-}
-
 .brand:hover .brand__logo {
   opacity: 0.96;
   transform: translateY(-1px);
@@ -363,11 +332,6 @@ h1, h2, h3 { margin: 0; font-weight: 600; line-height: 1.2; }
 @keyframes pin-glow {
   0%, 100% { box-shadow: 0 0 10px var(--red-glow), 0 0 3px #fff; }
   50% { box-shadow: 0 0 22px var(--red-glow), 0 0 8px #ff8a8a; }
-}
-
-@keyframes metallic-shimmer {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
 }
 
 .hero__overlay {
@@ -875,43 +839,14 @@ h1, h2, h3 { margin: 0; font-weight: 600; line-height: 1.2; }
   text-align: center;
 }
 
-.footer__metal {
-  position: relative;
-  display: inline-block;
-  line-height: 0;
-  margin: 0 auto 0.65rem;
-}
-
 .footer__logo {
   height: 88px;
   width: auto;
   max-width: min(340px, 92vw);
-  margin: 0;
+  margin: 0 auto 0.65rem;
   object-fit: contain;
   object-position: center;
-  filter:
-    drop-shadow(0 2px 12px rgba(0, 0, 0, 0.45))
-    contrast(1.06)
-    saturate(1.05);
-}
-
-.footer__shine {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    110deg,
-    transparent 0%,
-    transparent 30%,
-    rgba(255, 255, 255, 0.05) 38%,
-    rgba(255, 255, 255, 0.35) 48%,
-    rgba(200, 200, 200, 0.25) 52%,
-    transparent 62%,
-    transparent 100%
-  );
-  background-size: 200% 100%;
-  mix-blend-mode: overlay;
-  animation: metallic-shimmer 5s ease-in-out infinite;
-  pointer-events: none;
+  filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.45));
 }
 
 .footer__tagline {
@@ -1078,7 +1013,6 @@ h1, h2, h3 { margin: 0; font-weight: 600; line-height: 1.2; }
   .data-card__metrics { grid-template-columns: repeat(2, 1fr); }
   .site-footer__grid { grid-template-columns: 1fr; }
   .footer__logo { height: 76px; max-width: 100%; }
-  .footer__metal { margin-bottom: 0.65rem; }
   .footer__tagline { font-size: 0.65rem; letter-spacing: 0.22em; }
 }
 
@@ -1087,10 +1021,5 @@ h1, h2, h3 { margin: 0; font-weight: 600; line-height: 1.2; }
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-  .brand__shine,
-  .footer__shine {
-    animation: none;
-    opacity: 0.35;
   }
 }
