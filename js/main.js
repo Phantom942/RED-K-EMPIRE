@@ -11,6 +11,9 @@
   const emptyMsg = document.getElementById("portfolio-empty");
   const cards = grid ? [...grid.querySelectorAll(".data-card")] : [];
   const vaultForm = document.getElementById("vault-form");
+  const filterType = document.getElementById("filter-type");
+  const filterTx = document.getElementById("filter-tx");
+  const filterArr = document.getElementById("filter-arr");
 
   /* —— Mobile nav —— */
   if (toggle && nav) {
@@ -27,9 +30,6 @@
 
     nav.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => setOpen(false));
-    });
-    document.querySelectorAll(".header-cta").forEach((cta) => {
-      cta.addEventListener("click", () => setOpen(false));
     });
 
     document.addEventListener("keydown", (e) => {
@@ -62,10 +62,26 @@
     const activeHref = navHrefForSection(current);
     navLinks.forEach((link) => {
       const href = link.getAttribute("href") || "";
+      const filter = link.dataset.filterType;
+      if (filter) {
+        link.classList.toggle("is-active", current === "off-market" && filterType?.value === filter);
+        return;
+      }
       link.classList.toggle("is-active", href === activeHref);
     });
   };
   window.addEventListener("scroll", updateActiveNav, { passive: true });
+
+  /* —— Nav quick filters —— */
+  navLinks.forEach((link) => {
+    const preset = link.dataset.filterType;
+    if (!preset) return;
+    link.addEventListener("click", (e) => {
+      if (!filterType) return;
+      filterType.value = preset;
+      applyFilters(false);
+    });
+  });
 
   /* —— Paris dark map (Leaflet + CartoDB Dark Matter) —— */
   const mapEl = document.getElementById("paris-map");
@@ -119,11 +135,11 @@
   }
 
   /* —— Filtres —— */
-  const applyFilters = () => {
+  const applyFilters = (scroll = true) => {
     if (!grid) return;
-    const type = document.getElementById("filter-type")?.value ?? "";
-    const tx = document.getElementById("filter-tx")?.value ?? "";
-    const arr = document.getElementById("filter-arr")?.value ?? "";
+    const type = filterType?.value ?? "";
+    const tx = filterTx?.value ?? "";
+    const arr = filterArr?.value ?? "";
 
     let visible = 0;
     cards.forEach((card) => {
@@ -136,13 +152,16 @@
     });
 
     if (emptyMsg) emptyMsg.hidden = visible > 0;
-    document.getElementById("off-market")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    updateActiveNav();
+    if (scroll) {
+      document.getElementById("off-market")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   if (searchForm) {
     searchForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      applyFilters();
+      applyFilters(true);
     });
   }
 
