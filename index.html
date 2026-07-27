@@ -113,8 +113,8 @@
   </header>
 
   <main id="main">
-    <section class="hero" aria-label="Carte marché Paris">
-      <div class="hero__map" id="paris-map" role="img" aria-label="Carte interactive de Paris — actifs RED-K"></div>
+    <section class="hero" aria-label="Carte marché France">
+      <div class="hero__map" id="paris-map" role="img" aria-label="Carte interactive de France — actifs RED-K"></div>
       <div class="hero__shade" aria-hidden="true"></div>
       <div class="hero__emblem" aria-hidden="true"></div>
 
@@ -139,29 +139,27 @@
                 </select>
               </div>
               <div class="search-panel__field">
-                <label class="search-panel__label" for="filter-arr">Arrondissement</label>
-                <select class="search-panel__select" id="filter-arr" name="arrondissement">
-                  <option value="">Select</option>
-                  <option value="1">1er</option>
-                  <option value="2">2ème</option>
-                  <option value="3">3ème</option>
-                  <option value="4">4ème</option>
-                  <option value="5">5ème</option>
-                  <option value="6">6ème</option>
-                  <option value="7">7ème</option>
-                  <option value="8">8ème</option>
-                  <option value="9">9ème</option>
-                  <option value="10">10ème</option>
-                  <option value="11">11ème</option>
-                  <option value="12">12ème</option>
-                  <option value="13">13ème</option>
-                  <option value="14">14ème</option>
-                  <option value="15">15ème</option>
-                  <option value="16">16ème</option>
-                  <option value="17">17ème</option>
-                  <option value="18">18ème</option>
-                  <option value="19">19ème</option>
-                  <option value="20">20ème</option>
+                <label class="search-panel__label" for="filter-location">Localisation</label>
+                <select class="search-panel__select" id="filter-location" name="location">
+                  <option value="">Toute la France</option>
+                  <option value="ara">Auvergne-Rhône-Alpes</option>
+                  <option value="bfc">Bourgogne-Franche-Comté</option>
+                  <option value="bre">Bretagne</option>
+                  <option value="cvl">Centre-Val de Loire</option>
+                  <option value="cor">Corse</option>
+                  <option value="ges">Grand Est</option>
+                  <option value="hdf">Hauts-de-France</option>
+                  <option value="idf">Île-de-France</option>
+                  <option value="nor">Normandie</option>
+                  <option value="naq">Nouvelle-Aquitaine</option>
+                  <option value="occ">Occitanie</option>
+                  <option value="pdl">Pays de la Loire</option>
+                  <option value="pac">Provence-Alpes-Côte d'Azur</option>
+                  <option value="glp">Guadeloupe</option>
+                  <option value="mtq">Martinique</option>
+                  <option value="guf">Guyane</option>
+                  <option value="lre">La Réunion</option>
+                  <option value="may">Mayotte</option>
                 </select>
               </div>
             </div>
@@ -203,105 +201,12 @@
 
     <section class="section portfolio" id="off-market" aria-labelledby="portfolio-title">
       <div class="container">
-        <h2 class="portfolio__title" id="portfolio-title">Data Cards For exclusive properties</h2>
+        <h2 class="portfolio__title" id="portfolio-title">Locaux disponibles</h2>
 
-        <div class="portfolio__grid" id="portfolio-grid">
-          <article class="data-card" data-type="fonds" data-transaction="vente" data-arr="8" data-pin="1">
-            <div class="data-card__media">
-              <img
-                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80&sat=-100"
-                alt="Boutique d'angle Paris 8ème"
-                width="800"
-                height="500"
-                loading="lazy"
-              />
-              <img class="data-card__badge" src="assets/favicon-32.png" alt="" width="32" height="32" aria-hidden="true" />
-            </div>
-            <div class="data-card__metrics" aria-label="Indicateurs boutique Paris 8ème">
-              <div class="data-card__metric">
-                <span class="data-card__metric-label">Estimated Yield</span>
-                <strong class="data-card__metric-value">7.98%</strong>
-              </div>
-              <div class="data-card__metric">
-                <span class="data-card__metric-label">Footfall</span>
-                <strong class="data-card__metric-value">1.000</strong>
-              </div>
-              <div class="data-card__metric">
-                <span class="data-card__metric-label">Historical Revenue</span>
-                <strong class="data-card__metric-value">€150 m</strong>
-              </div>
-              <div class="data-card__metric">
-                <span class="data-card__metric-label">Size m²</span>
-                <strong class="data-card__metric-value">322 m²</strong>
-              </div>
-            </div>
-          </article>
+        <div class="portfolio__grid" id="portfolio-grid"></div>
 
-          <article class="data-card" data-type="fonds" data-transaction="location" data-arr="11" data-pin="2">
-            <div class="data-card__media">
-              <img
-                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80&sat=-100"
-                alt="Restauration avec extraction Paris 11ème"
-                width="800"
-                height="500"
-                loading="lazy"
-              />
-              <img class="data-card__badge" src="assets/favicon-32.png" alt="" width="32" height="32" aria-hidden="true" />
-            </div>
-            <div class="data-card__metrics" aria-label="Indicateurs restauration Paris 11ème">
-              <div class="data-card__metric">
-                <span class="data-card__metric-label">Estimated Yield</span>
-                <strong class="data-card__metric-value">6.42%</strong>
-              </div>
-              <div class="data-card__metric">
-                <span class="data-card__metric-label">Footfall</span>
-                <strong class="data-card__metric-value">850</strong>
-              </div>
-              <div class="data-card__metric">
-                <span class="data-card__metric-label">Historical Revenue</span>
-                <strong class="data-card__metric-value">€98 m</strong>
-              </div>
-              <div class="data-card__metric">
-                <span class="data-card__metric-label">Size m²</span>
-                <strong class="data-card__metric-value">90 m²</strong>
-              </div>
-            </div>
-          </article>
-
-          <article class="data-card" data-type="bureaux" data-transaction="vente" data-arr="16" data-pin="3">
-            <div class="data-card__media">
-              <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&sat=-100"
-                alt="Bureaux prime Paris 16ème"
-                width="800"
-                height="500"
-                loading="lazy"
-              />
-              <img class="data-card__badge" src="assets/favicon-32.png" alt="" width="32" height="32" aria-hidden="true" />
-            </div>
-            <div class="data-card__metrics" aria-label="Indicateurs bureaux Paris 16ème">
-              <div class="data-card__metric">
-                <span class="data-card__metric-label">Estimated Yield</span>
-                <strong class="data-card__metric-value">5.15%</strong>
-              </div>
-              <div class="data-card__metric">
-                <span class="data-card__metric-label">Footfall</span>
-                <strong class="data-card__metric-value">N/A</strong>
-              </div>
-              <div class="data-card__metric">
-                <span class="data-card__metric-label">Historical Revenue</span>
-                <strong class="data-card__metric-value">€210 m</strong>
-              </div>
-              <div class="data-card__metric">
-                <span class="data-card__metric-label">Size m²</span>
-                <strong class="data-card__metric-value">250 m²</strong>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <p class="portfolio__empty" id="portfolio-empty" hidden>
-          Aucun actif ne correspond à ces critères.
+        <p class="portfolio__empty" id="portfolio-empty">
+          Aucun local en ligne pour le moment. Contactez-nous pour découvrir nos opportunités en France.
         </p>
       </div>
     </section>
@@ -372,7 +277,7 @@
 
         <div class="footer__meta">
           <p class="footer__meta-title">RED-K EMPIRE</p>
-          <p class="footer__meta-text">Immobilier commercial · Paris</p>
+          <p class="footer__meta-text">Immobilier commercial · France</p>
           <p class="footer__meta-text">Fonds de commerce · Locaux · Bureaux</p>
         </div>
       </div>

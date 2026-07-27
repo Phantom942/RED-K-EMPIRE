@@ -327,6 +327,44 @@ h1, h2, h3 { margin: 0; font-weight: 600; line-height: 1.2; }
 }
 .hero__map .leaflet-control-attribution a { color: #999 !important; }
 
+.hero__map .leaflet-control-zoom {
+  border: 1px solid var(--border) !important;
+  border-radius: 0 !important;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.hero__map .leaflet-control-zoom a {
+  width: 34px !important;
+  height: 34px !important;
+  line-height: 34px !important;
+  font-size: 18px !important;
+  font-weight: 600;
+  color: var(--chrome-bright) !important;
+  background: linear-gradient(180deg, rgba(70, 74, 82, 0.55) 0%, rgba(10, 10, 12, 0.95) 100%) !important;
+  border-bottom: 1px solid var(--border-soft) !important;
+  transition: background 0.2s, color 0.2s;
+}
+
+.hero__map .leaflet-control-zoom a:last-child {
+  border-bottom: none !important;
+}
+
+.hero__map .leaflet-control-zoom a:hover {
+  color: #fff !important;
+  background: rgba(225, 6, 0, 0.85) !important;
+}
+
+.hero__map .leaflet-control-zoom a.leaflet-disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.hero__map .leaflet-control-zoom a.leaflet-disabled:hover {
+  color: var(--chrome-bright) !important;
+  background: linear-gradient(180deg, rgba(70, 74, 82, 0.55) 0%, rgba(10, 10, 12, 0.95) 100%) !important;
+}
+
 .hero__shade {
   position: absolute;
   inset: 0;

@@ -13,7 +13,7 @@
   const vaultForm = document.getElementById("vault-form");
   const filterType = document.getElementById("filter-type");
   const filterTx = document.getElementById("filter-tx");
-  const filterArr = document.getElementById("filter-arr");
+  const filterLocation = document.getElementById("filter-location");
 
   /* —— Mobile nav —— */
   if (toggle && nav) {
@@ -83,52 +83,27 @@
     });
   });
 
-  /* —— Paris dark map (Leaflet + CartoDB Dark Matter) —— */
+  /* —— Carte France (Leaflet + CartoDB Dark Matter) —— */
   const mapEl = document.getElementById("paris-map");
   if (mapEl && typeof L !== "undefined") {
     const map = L.map(mapEl, {
       zoomControl: false,
       attributionControl: true,
       dragging: true,
-      scrollWheelZoom: false,
+      scrollWheelZoom: true,
+      doubleClickZoom: true,
+      touchZoom: true,
+      boxZoom: true,
+      keyboard: true,
     }).setView([48.8566, 2.3522], 13);
+
+    L.control.zoom({ position: "bottomleft" }).addTo(map);
 
     L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
       subdomains: "abcd",
       maxZoom: 19,
     }).addTo(map);
-
-    const pinIcon = L.divIcon({
-      className: "",
-      html: '<div class="rk-pin"></div>',
-      iconSize: [18, 18],
-      iconAnchor: [9, 18],
-    });
-
-    const assets = [
-      { lat: 48.8738, lng: 2.2950, label: "Boutique d'angle — 8ème", pin: "1" },
-      { lat: 48.8631, lng: 2.3708, label: "Restauration — 11ème", pin: "2" },
-      { lat: 48.8637, lng: 2.2769, label: "Bureaux prime — 16ème", pin: "3" },
-      { lat: 48.8606, lng: 2.3376, label: "Off-Market α", pin: "4" },
-      { lat: 48.8700, lng: 2.3320, label: "Off-Market β", pin: "5" },
-    ];
-
-    const markers = {};
-    assets.forEach((a) => {
-      const m = L.marker([a.lat, a.lng], { icon: pinIcon, title: a.label }).addTo(map);
-      markers[a.pin] = m;
-    });
-
-    cards.forEach((card) => {
-      const pin = card.dataset.pin;
-      card.addEventListener("mouseenter", () => {
-        const m = markers[pin];
-        if (m) {
-          map.panTo(m.getLatLng(), { animate: true, duration: 0.4 });
-        }
-      });
-    });
 
     setTimeout(() => map.invalidateSize(), 200);
     window.addEventListener("resize", () => map.invalidateSize());
@@ -139,14 +114,14 @@
     if (!grid) return;
     const type = filterType?.value ?? "";
     const tx = filterTx?.value ?? "";
-    const arr = filterArr?.value ?? "";
+    const location = filterLocation?.value ?? "";
 
     let visible = 0;
     cards.forEach((card) => {
       const show =
         (!type || card.dataset.type === type) &&
         (!tx || card.dataset.transaction === tx) &&
-        (!arr || card.dataset.arr === arr);
+        (!location || card.dataset.region === location);
       card.classList.toggle("is-hidden", !show);
       if (show) visible += 1;
     });
