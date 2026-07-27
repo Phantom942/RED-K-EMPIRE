@@ -1,7 +1,7 @@
 ﻿ASSETS RED-K EMPIRE
 ===================
 logo-footer.png      → Logo header + footer (PNG transparent, sans slogan)
-og-image.jpg         → Aperçu partage WhatsApp / réseaux (1200×630, fond sombre)
+og-image.jpg         → Aperçu partage WhatsApp / réseaux (1200×630, logo + slogan)
 favicon-16.png       → Favicon 16×16 (dérivé du logo)
 favicon-32.png       → Favicon 32×32
 apple-touch-icon.png → Icône iOS 180×180
