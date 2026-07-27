@@ -1,0 +1,47 @@
+# Phantom Empire — RED-K EMPIRE
+
+Landing page B2B ultra-premium pour **RED-K EMPIRE**, agence immobilière commerciale à Paris (fonds de commerce, locaux, bureaux off-market).
+
+## Stack
+
+- HTML5 / CSS3 / JavaScript vanilla
+- [Leaflet](https://leafletjs.com/) + CartoDB Dark (carte Paris)
+- Fonts : Orbitron, Rajdhani, IBM Plex Sans, Inter
+
+## Structure
+
+```
+├── index.html          # Page d'accueil
+├── css/main.css        # Styles
+├── js/main.js          # Nav, carte, filtres, formulaire vault
+└── assets/
+    └── logo-footer.png # Logo header + footer (transparent)
+```
+
+## Lancer en local
+
+```bash
+# Python
+python -m http.server 5500
+
+# Ou ouvrir index.html via un serveur local (éviter file:// pour Leaflet)
+```
+
+→ [http://localhost:5500](http://localhost:5500)
+
+## Déploiement
+
+Site **100 % statique** — compatible :
+
+| Hébergeur | Méthode |
+|-----------|---------|
+| **GitHub Pages** | Settings → Pages → branch `main`, dossier `/` |
+| **Vercel** | Import repo → Framework Preset: Other |
+| **Netlify** | Drag & drop ou connect repo |
+| **Cloudflare Pages** | Connect Git → build command vide, output `/` |
+
+Aucune variable d'environnement requise. Remplacer le numéro WhatsApp (`33600000000`) et l'email dans `index.html` avant la mise en prod.
+
+## Licence
+
+© RED-K EMPIRE — Tous droits réservés.

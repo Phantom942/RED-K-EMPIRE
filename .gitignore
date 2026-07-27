@@ -1,0 +1,28 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Env / secrets
+.env
+.env.*
+
+# Sources lourdes & maquettes (hors site prod)
+Maquettes/
+scripts/
+assets/logo-*-source.png
+assets/logo-source.png
+assets/logo-transparent.png
+assets/logo-emblem.png
+assets/image_0.png
+assets/logo-anime.mp4
+assets/image_4.png
+Un_logo_corporate_haut_de_gamm.mp4
+
+# Logs
+*.log

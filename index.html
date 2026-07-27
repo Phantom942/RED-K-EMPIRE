@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RED-K EMPIRE — Actifs commerciaux off-market · Paris</title>
+  <meta name="description" content="RED-K EMPIRE : agence immobilière commerciale premium à Paris. Fonds de commerce, locaux et bureaux off-market." />
+  <meta property="og:image" content="assets/logo-footer.png" />
+  <link rel="icon" type="image/png" href="assets/logo-footer.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Orbitron:wght@600;700&family=Rajdhani:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body class="site">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header class="site-header" id="home">
+    <div class="container site-header__inner">
+      <a class="brand" href="#home" aria-label="RED-K EMPIRE — Accueil">
+        <img
+          class="brand__logo"
+          src="assets/logo-footer.png"
+          alt="RED-K EMPIRE"
+          width="138"
+          height="72"
+          decoding="async"
+        />
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <nav class="nav" id="site-nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a class="nav__link is-active" href="#home">Home</a></li>
+          <li class="nav__sep" aria-hidden="true">|</li>
+          <li><a class="nav__link" href="#off-market">Off-Market</a></li>
+          <li class="nav__sep" aria-hidden="true">|</li>
+          <li><a class="nav__link" href="#investisseurs">Investisseurs</a></li>
+          <li class="nav__sep" aria-hidden="true">|</li>
+          <li><a class="nav__link" href="#vendeurs">Vendeurs</a></li>
+          <li class="nav__sep" aria-hidden="true">|</li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+        </ul>
+        <a class="header-cta header-cta--mobile" href="#vault">
+          <span>Accès Off-Market VIP</span>
+          <i class="fa-solid fa-lock header-cta__icon" aria-hidden="true"></i>
+        </a>
+      </nav>
+
+      <a class="header-cta" href="#vault">
+        <span>Accès Off-Market VIP</span>
+        <svg class="header-cta__lock" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+          <defs>
+            <linearGradient id="ctaLockChrome" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#f5f7fa"/>
+              <stop offset="50%" stop-color="#b8bec8"/>
+              <stop offset="100%" stop-color="#7a808a"/>
+            </linearGradient>
+          </defs>
+          <rect x="5" y="11" width="14" height="10" rx="2" fill="url(#ctaLockChrome)" stroke="#d8dce2" stroke-width="0.5"/>
+          <path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="url(#ctaLockChrome)" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="Carte marché Paris">
+      <div class="hero__map" id="paris-map" role="img" aria-label="Carte interactive de Paris — actifs RED-K"></div>
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <div class="hero__overlay">
+        <form class="search-bar" id="market-search" role="search" aria-label="Filtrer le portefeuille">
+          <div class="search-bar__seg">
+            <label class="sr-only" for="filter-type">Type de bien</label>
+            <select class="search-bar__select" id="filter-type" name="type">
+              <option value="">Type de Bien : Boutique / Restaurant / Bureaux</option>
+              <option value="boutique">Boutique</option>
+              <option value="restaurant">Restaurant</option>
+              <option value="bureaux">Bureaux</option>
+            </select>
+          </div>
+          <div class="search-bar__seg">
+            <label class="sr-only" for="filter-tx">Transaction</label>
+            <select class="search-bar__select" id="filter-tx" name="transaction">
+              <option value="">Transaction : Location / Vente</option>
+              <option value="location">Location</option>
+              <option value="vente">Vente</option>
+            </select>
+          </div>
+          <div class="search-bar__seg">
+            <label class="sr-only" for="filter-arr">Arrondissement</label>
+            <select class="search-bar__select" id="filter-arr" name="arrondissement">
+              <option value="">Arrondissement</option>
+              <option value="1">1er</option>
+              <option value="2">2ème</option>
+              <option value="3">3ème</option>
+              <option value="4">4ème</option>
+              <option value="5">5ème</option>
+              <option value="6">6ème</option>
+              <option value="7">7ème</option>
+              <option value="8">8ème</option>
+              <option value="9">9ème</option>
+              <option value="10">10ème</option>
+              <option value="11">11ème</option>
+              <option value="12">12ème</option>
+              <option value="13">13ème</option>
+              <option value="14">14ème</option>
+              <option value="15">15ème</option>
+              <option value="16">16ème</option>
+              <option value="17">17ème</option>
+              <option value="18">18ème</option>
+              <option value="19">19ème</option>
+              <option value="20">20ème</option>
+            </select>
+          </div>
+          <button class="search-bar__submit" type="submit">Rechercher</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section portfolio" id="off-market" aria-labelledby="portfolio-title">
+      <div class="container">
+        <h2 class="portfolio__title" id="portfolio-title">Current Portfolio (5 Exclusive Assets)</h2>
+
+        <div class="portfolio__grid" id="portfolio-grid">
+          <article class="data-card" data-type="boutique" data-transaction="vente" data-arr="8" data-pin="1">
+            <p class="data-card__label">Data Cards | Vitrines</p>
+            <div class="data-card__media">
+              <img
+                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80&sat=-100"
+                alt="Boutique d'angle Paris 8ème"
+                width="800"
+                height="500"
+                loading="lazy"
+              />
+            </div>
+            <div class="data-card__body">
+              <h3 class="data-card__title">Boutique d'angle — Paris 8ème</h3>
+              <p class="data-card__meta">120m² | Confidentiel | Rendement % | Cession / Murs</p>
+            </div>
+          </article>
+
+          <article class="data-card" data-type="restaurant" data-transaction="location" data-arr="11" data-pin="2">
+            <p class="data-card__label">Data Cards | Vitrines</p>
+            <div class="data-card__media">
+              <img
+                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80&sat=-100"
+                alt="Restauration avec extraction Paris 11ème"
+                width="800"
+                height="500"
+                loading="lazy"
+              />
+            </div>
+            <div class="data-card__body">
+              <h3 class="data-card__title">Restauration avec extraction — Paris 11ème</h3>
+              <p class="data-card__meta">90m² | 6000€/m² | Rendement % | Cession / Location</p>
+            </div>
+          </article>
+
+          <article class="data-card" data-type="bureaux" data-transaction="vente" data-arr="16" data-pin="3">
+            <p class="data-card__label">Data Cards | Vitrines</p>
+            <div class="data-card__media">
+              <img
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&sat=-100"
+                alt="Bureaux prime Paris 16ème"
+                width="800"
+                height="500"
+                loading="lazy"
+              />
+            </div>
+            <div class="data-card__body">
+              <h3 class="data-card__title">Bureaux prime — Paris 16ème</h3>
+              <p class="data-card__meta">250m² | Vente | Rendement % | Murs Libres</p>
+            </div>
+          </article>
+        </div>
+
+        <p class="portfolio__empty" id="portfolio-empty" hidden>
+          Aucun actif ne correspond à ces critères.
+        </p>
+
+        <aside class="vault" id="vault" aria-labelledby="vault-title">
+          <div class="vault__bg" aria-hidden="true"></div>
+          <div class="vault__content">
+            <div class="vault__lock" aria-hidden="true">
+              <svg width="88" height="88" viewBox="0 0 24 24" fill="none">
+                <defs>
+                  <linearGradient id="vaultChrome" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#ffffff"/>
+                    <stop offset="35%" stop-color="#d4d8de"/>
+                    <stop offset="70%" stop-color="#8a9099"/>
+                    <stop offset="100%" stop-color="#5a5e66"/>
+                  </linearGradient>
+                </defs>
+                <rect x="3.5" y="10.5" width="17" height="11.5" rx="2.2" fill="url(#vaultChrome)" stroke="#e8eaef" stroke-width="0.4"/>
+                <path d="M7.5 10.5V7.2a4.5 4.5 0 0 1 9 0v3.3" stroke="url(#vaultChrome)" stroke-width="2.2" stroke-linecap="round"/>
+                <circle cx="12" cy="16.2" r="1.6" fill="#121214"/>
+                <rect x="11.35" y="16.2" width="1.3" height="2.4" rx="0.4" fill="#121214"/>
+              </svg>
+            </div>
+            <h3 class="vault__title" id="vault-title">
+              <span class="vault__title-red">Dossier confidentiel</span>
+              <span class="vault__title-white"> : Accès Off-Market uniquement.</span>
+            </h3>
+            <form class="vault__form" id="vault-form">
+              <label class="sr-only" for="vault-name">Nom / Société</label>
+              <input id="vault-name" name="name" type="text" placeholder="Nom / Société" required autocomplete="organization" />
+              <label class="sr-only" for="vault-email">Email</label>
+              <input id="vault-email" name="email" type="email" placeholder="Email" required autocomplete="email" />
+              <button type="submit">Demander l'accès</button>
+              <p class="vault__success" id="vault-success" hidden>Demande transmise. Un advisor RED-K vous contacte sous 24&nbsp;h.</p>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="investisseurs">
+      <div class="container section--narrow">
+        <p class="section__eyebrow">Investisseurs</p>
+        <h2 class="section__title">Ticket clair. Due diligence accélérée.</h2>
+        <p class="section__lede">Deal flow privé sur Paris — rareté structurelle, rendement documenté, closing discret.</p>
+        <a class="btn-chrome" href="#contact">Parler à un advisor</a>
+      </div>
+    </section>
+
+    <section class="section" id="vendeurs">
+      <div class="container section--narrow">
+        <p class="section__eyebrow">Vendeurs &amp; cédants</p>
+        <h2 class="section__title">Cédez sans bruit. Valorisez au prix marché.</h2>
+        <p class="section__lede">Mandat confidentiel, réseau investisseurs qualifiés, valorisation data-driven.</p>
+        <a class="btn-red" href="https://wa.me/33600000000?text=Bonjour%20RED-K%20EMPIRE%2C%20estimation%20confidentielle." target="_blank" rel="noopener noreferrer">Demander une estimation</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container site-footer__grid">
+      <div class="footer__brand">
+        <img class="footer__logo" src="assets/logo-footer.png" alt="RED-K EMPIRE" width="170" height="88" />
+        <p class="footer__tagline">Build your own legacy.</p>
+      </div>
+      <div class="footer__cta">
+        <a class="footer__link" href="mailto:contact@red-k-empire.fr">contact@red-k-empire.fr</a>
+        <a class="btn-red footer__whatsapp" href="https://wa.me/33600000000?text=Bonjour%20RED-K%20EMPIRE%2C%20acc%C3%A8s%20Off-Market%20VIP." target="_blank" rel="noopener noreferrer">WhatsApp VIP</a>
+      </div>
+      <div class="footer__legal">
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+        <p class="footer__signature">Site par PhantomDev</p>
+      </div>
+    </div>
+  </footer>
+
+  <a
+    class="whatsapp-fab"
+    href="https://wa.me/33600000000?text=Bonjour%20RED-K%20EMPIRE%2C%20acc%C3%A8s%20Off-Market%20VIP."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp RED-K EMPIRE"
+  >
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
