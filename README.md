@@ -40,7 +40,7 @@ Site **100 % statique** — compatible :
 | **Netlify** | Drag & drop ou connect repo |
 | **Cloudflare Pages** | Connect Git → build command vide, output `/` |
 
-Aucune variable d'environnement requise. Remplacer le numéro WhatsApp (`33600000000`) et l'email dans `index.html` avant la mise en prod.
+Aucune variable d'environnement requise. Contact WhatsApp : `+33 6 48 74 56 68` (configuré dans `index.html`).
 
 ## Licence
 
